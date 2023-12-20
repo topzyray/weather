@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaKode Weather App</title>
+    <link rel="stylesheet" href="/style/main.css">
+</head>
+<body>
+    <header>
+        <h1>WaKode Weather App</h1>
+    </header>
+
+    <main>
+        <section class="container">
+            <section class="search-container">
+                <form action="/" method="POST" class="form">
+                    <div class="input-container">
+                        <input type="search" name="city" placeholder="Enter Location">
+                    </div>
+                    <div class="button-container">
+                        <input type="submit" value="Search" class="button">
+                    </div>
+                </form>
+            </section>
+        
+            <section class="display">
+                <% if (locals.content) {%>
+                    <section class="weather-info">
+                        <section class="info info-1">
+                            <%- locals.icon %>
+                            <div><h1 id="city-name"><%= content.name  %></h1></div> 
+                            <div><h1 id="temp"><%= (content.main.temp - 273.15).toFixed(2) %>°C</h1></div>
+                            <div><p id="description"><%= content.weather[0].description %></p></div>
+                            <p><span>Lon: <%= content.coord.lon %></span>, <span>Lat: <%= content.coord.lat %></span></p>
+                        </section>
+
+                        <section class="info info-2">
+                            <p>Country Code: <%= content.sys.country %></p>
+                            <p>Timezone: <%= content.timezone %></p>
+                        </section>
+                        
+                        <section class="info info-3">
+                            <p>Weather: <%= content.weather[0].main %></p>
+                            <p>Humidity: <%= content.main.humidity %>%</p>
+                            <p>Cloudiness: <%= content.clouds.all %>%</p>
+                            <p>Wind Speed: <%= content.wind.speed %>m/s</p>
+                            
+                        </section>
+
+                    </section>
+                    
+                <% } else { %>
+                    <section class="display display-error">
+                        <h1>404 Error</h1>
+                        <p>The location entered does not exist or incorrect. Please check and try again.</p>
+                    </section>
+                <% } %>
+            </section>
+        </section>
+    </main>
+
+    <footer>Made with ❤️ by WaKode. Copyright <%= new Date().getFullYear() %></footer>
+
+    <script src="/js/logic.js"></script>
+</body>
+</html>
