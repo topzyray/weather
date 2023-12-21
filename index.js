@@ -26,6 +26,7 @@ app.post("/", async (req, res) => {
         const result = response.data;
 
         res.render('index.ejs', {
+            city,
             content: result,
             icon: `<img src=https://openweathermap.org/img/w/${result.weather[0].icon}.png alt=${result.weather[0].description}`
         })

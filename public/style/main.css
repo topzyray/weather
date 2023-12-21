@@ -29,7 +29,7 @@ header {
     padding: 2rem;
 }
 
-header h1 {
+header h2 {
     text-shadow: 2px 2px 2px #fff;
 }
 
@@ -169,6 +169,20 @@ input[type="search"] {
 
 #description {
     color: #97a4aa;
+}
+
+.display-welcome {
+    /* background-color: #005480; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.display-welcome h1 {
+    font-size: 2.5rem;
+    color: #97a4aa;
+    text-align: center;
 }
 
 .display-error {
