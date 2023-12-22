@@ -212,3 +212,15 @@ input[type="search"] {
     text-shadow: 1px 2px 2px #005480;
     text-align: center;
 }
+
+#geo-coords a {
+    text-decoration: none;
+    color: #052d42;
+    font-weight: bold;
+}
+
+#geo-coords a:hover {
+    text-decoration: underline;
+    color: #97a4aa;
+    font-weight: bold;
+}

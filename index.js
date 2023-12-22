@@ -28,7 +28,8 @@ app.post("/", async (req, res) => {
         res.render('index.ejs', {
             city,
             content: result,
-            icon: `<img src=https://openweathermap.org/img/w/${result.weather[0].icon}.png alt=${result.weather[0].description}`
+            icon: `<img src=https://openweathermap.org/img/w/${result.weather[0].icon}.png alt=${result.weather[0].description}`,
+            mapUrl: `https://openweathermap.org/weathermap?zoom=12&lat=${result.coord.lat}&lon=${result.coord.lon}`
         })
     } catch (error) {
         console.log(error.message);

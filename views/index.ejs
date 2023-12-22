@@ -49,8 +49,7 @@
                                         <%= content.weather[0].description %>
                                     </p>
                                 </div>
-                                <p><span>Lon: <%= content.coord.lon %></span>, <span>Lat: <%= content.coord.lat %>
-                                    </span></p>
+                                <p id="geo-coords">Geo coords: <a href=<%= locals.mapUrl %> target="_blank">[<%= content.coord.lat %>, <%= content.coord.lon %>]</a></p>
                         </section>
 
                         <section class="info info-2">
